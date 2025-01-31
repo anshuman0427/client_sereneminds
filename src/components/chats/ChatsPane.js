@@ -2,12 +2,10 @@ import React from 'react';
 import Stack from '@mui/joy/Stack';
 import Sheet from '@mui/joy/Sheet';
 import Typography from '@mui/joy/Typography';
-import { Box, Chip, IconButton, Input } from '@mui/joy';
+import { Box, Chip, Input } from '@mui/joy';
 import List from '@mui/joy/List';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
-import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ChatListItem from './ChatListItem';
-import { toggleMessagesPane } from './utils';
 
 export default function ChatsPane(props) {
   const { chats, setSelectedChat, selectedChatId } = props;
@@ -42,27 +40,8 @@ export default function ChatsPane(props) {
         >
           Messages
         </Typography>
-        <IconButton
-          variant="plain"
-          aria-label="edit"
-          color="neutral"
-          size="sm"
-          sx={{ display: { xs: 'none', sm: 'unset' } }}
-        >
-          
-        </IconButton>
-        <IconButton
-          variant="plain"
-          aria-label="edit"
-          color="neutral"
-          size="sm"
-          onClick={() => {
-            toggleMessagesPane();
-          }}
-          sx={{ display: { sm: 'none' } }}
-        >
-          <CloseRoundedIcon />
-        </IconButton>
+        
+      
       </Stack>
       <Box sx={{ px: 2, pb: 1.5 }}>
         <Input

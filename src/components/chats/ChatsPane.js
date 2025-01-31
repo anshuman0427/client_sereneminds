@@ -4,7 +4,6 @@ import Sheet from '@mui/joy/Sheet';
 import Typography from '@mui/joy/Typography';
 import { Box, Chip, IconButton, Input } from '@mui/joy';
 import List from '@mui/joy/List';
-import EditNoteRoundedIcon from '@mui/icons-material/EditNoteRounded';
 import SearchRoundedIcon from '@mui/icons-material/SearchRounded';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import ChatListItem from './ChatListItem';
@@ -50,7 +49,7 @@ export default function ChatsPane(props) {
           size="sm"
           sx={{ display: { xs: 'none', sm: 'unset' } }}
         >
-          <EditNoteRoundedIcon />
+          
         </IconButton>
         <IconButton
           variant="plain"

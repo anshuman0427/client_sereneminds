@@ -8,8 +8,8 @@ export default function Header() {
     <Sheet
       sx={{
         display: { sm: 'flex', md: 'none' },
-        alignItems: 'center',
-        justifyContent: 'center',
+        alignItems: 'left',
+        justifyContent: 'left',
         position: 'fixed',
         top: 0,
         width: '100vw',

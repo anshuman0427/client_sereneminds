@@ -13,7 +13,8 @@ export default function ChatBubble(props) {
   const isSent = variant === 'sent';
   const [isHovered, setIsHovered] = useState(false);
   const [isLiked, setIsLiked] = useState(false);
-  const [isCelebrated] = useState(false);
+  // eslint-disable-next-line
+  const [isCelebrated, setIsCelebrated] = useState(false);
 
   return (
     <Box sx={{ maxWidth: '60%', minWidth: 'auto' }}>
@@ -121,7 +122,7 @@ export default function ChatBubble(props) {
               >
                 {isLiked ? '❤️' : <FavoriteBorderIcon />}
               </IconButton>
-              
+             
             </Stack>
           )}
         </Box>

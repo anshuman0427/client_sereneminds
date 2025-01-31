@@ -19,7 +19,7 @@ export default function MessagesPane(props) {
   return (
     <Sheet
       sx={{
-        height: {  md: '100dvh' },
+        height: { xs: 'calc(100dvh - var(--Header-height))', md: '100dvh' },
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: 'background.level1',

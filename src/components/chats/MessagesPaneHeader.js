@@ -66,16 +66,16 @@ export default function MessagesPaneHeader(props) {
         </div>
       </Stack>
       <Stack spacing={1} direction="row" sx={{ alignItems: 'center' }}>
-       
+        
         <Button
           color="neutral"
           variant="outlined"
           size="sm"
-          sx={{ display: { xs: 'none', md: 'inline-flex' } }}
+          sx={{ display: { xs: 'flex', md: 'inline-flex' } }}
         >
           Book Appointment
         </Button>
-       
+        
       </Stack>
     </Stack>
   );

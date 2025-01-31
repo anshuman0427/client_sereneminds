@@ -1,6 +1,7 @@
 import React from 'react';
 import GlobalStyles from '@mui/joy/GlobalStyles';
 import Sheet from '@mui/joy/Sheet';
+import Typography from '@mui/joy/Typography';
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
       sx={{
         display: { sm: 'flex', md: 'none' },
         alignItems: 'center',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         position: 'fixed',
         top: 0,
         width: '100vw',
@@ -22,16 +23,24 @@ export default function Header() {
       }}
     >
       <GlobalStyles
-        styles={(theme) => ({
+        styles={{
+          '@import': "url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap')",
           ':root': {
             '--Header-height': '52px',
-            [theme.breakpoints.up('lg')]: {
-              '--Header-height': '0px',
-            },
           },
-        })}
+        }}
       />
-      
+      <Typography
+        level="h6"
+        sx={{
+          fontSize: '20px',
+          fontWeight: 600, // Semi-bold
+          color: 'text.primary',
+          fontFamily: 'Inter, sans-serif', // Apply Inter typeface
+        }}
+      >
+        Serene MINDS
+      </Typography>
     </Sheet>
   );
 }

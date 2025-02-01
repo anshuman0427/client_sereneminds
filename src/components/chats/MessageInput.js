@@ -1,24 +1,19 @@
-import React, { useRef } from 'react';
-import Box from '@mui/joy/Box';
-import Button from '@mui/joy/Button';
-import FormControl from '@mui/joy/FormControl';
-import Textarea from '@mui/joy/Textarea';
-import { IconButton, Stack } from '@mui/joy';
-
-import FormatBoldRoundedIcon from '@mui/icons-material/FormatBoldRounded';
-import FormatItalicRoundedIcon from '@mui/icons-material/FormatItalicRounded';
-import StrikethroughSRoundedIcon from '@mui/icons-material/StrikethroughSRounded';
-import FormatListBulletedRoundedIcon from '@mui/icons-material/FormatListBulletedRounded';
-import SendRoundedIcon from '@mui/icons-material/SendRounded';
+import React, { useRef } from "react";
+import Box from "@mui/joy/Box";
+import Button from "@mui/joy/Button";
+import FormControl from "@mui/joy/FormControl";
+import Textarea from "@mui/joy/Textarea";
+import { Stack } from "@mui/joy";
+import SendRoundedIcon from "@mui/icons-material/SendRounded";
 
 export default function MessageInput(props) {
   const { textAreaValue, setTextAreaValue, onSubmit } = props;
   const textAreaRef = useRef(null);
 
   const handleClick = () => {
-    if (textAreaValue.trim() !== '') {
+    if (textAreaValue.trim() !== "") {
       onSubmit();
-      setTextAreaValue('');
+      setTextAreaValue("");
     }
   };
 
@@ -29,43 +24,38 @@ export default function MessageInput(props) {
           placeholder="Type something here…"
           aria-label="Message"
           ref={textAreaRef}
-          onChange={(event) => {
-            setTextAreaValue(event.target.value);
-          }}
+          onChange={(event) => setTextAreaValue(event.target.value)}
           value={textAreaValue}
           minRows={3}
           maxRows={10}
+          onKeyDown={(event) => {
+            if (event.key === "Enter" && !event.shiftKey) {
+              event.preventDefault();
+              handleClick();
+            }
+          }}
+          sx={{
+            "& textarea:first-of-type": {
+              minHeight: 72,
+            },
+          }}
           endDecorator={
             <Stack
               direction="row"
               sx={{
-                justifyContent: 'space-between',
-                alignItems: 'center',
+                justifyContent: "flex-end", // Align button to right
+                alignItems: "center",
                 flexGrow: 1,
                 py: 1,
                 pr: 1,
-                borderTop: '1px solid',
-                borderColor: 'divider',
+                borderTop: "1px solid",
+                borderColor: "divider",
               }}
             >
-              <div>
-                <IconButton size="sm" variant="plain" color="neutral">
-                  <FormatBoldRoundedIcon />
-                </IconButton>
-                <IconButton size="sm" variant="plain" color="neutral">
-                  <FormatItalicRoundedIcon />
-                </IconButton>
-                <IconButton size="sm" variant="plain" color="neutral">
-                  <StrikethroughSRoundedIcon />
-                </IconButton>
-                <IconButton size="sm" variant="plain" color="neutral">
-                  <FormatListBulletedRoundedIcon />
-                </IconButton>
-              </div>
               <Button
                 size="sm"
                 color="primary"
-                sx={{ alignSelf: 'center', borderRadius: 'sm' }}
+                sx={{ borderRadius: "sm" }}
                 endDecorator={<SendRoundedIcon />}
                 onClick={handleClick}
               >
@@ -73,16 +63,6 @@ export default function MessageInput(props) {
               </Button>
             </Stack>
           }
-          onKeyDown={(event) => {
-            if (event.key === 'Enter' && (event.metaKey || event.ctrlKey)) {
-              handleClick();
-            }
-          }}
-          sx={{
-            '& textarea:first-of-type': {
-              minHeight: 72,
-            },
-          }}
         />
       </FormControl>
     </Box>

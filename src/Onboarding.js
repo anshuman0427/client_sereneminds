@@ -257,7 +257,7 @@ const Onboarding = () => {
             Onboarding
           </Typography>
           <Typography level="body1" sx={{ mb: 4 }}>
-          Client Intake Form: Understanding Your Needs and Goals for Therapy
+            Client Intake Form: Understanding Your Needs and Goals for Therapy.
           </Typography>
 
           <form>

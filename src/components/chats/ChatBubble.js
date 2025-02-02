@@ -103,28 +103,7 @@ export default function ChatBubble(props) {
               {content}
             </Typography>
           </Sheet>
-          {(isHovered || isLiked || isCelebrated) && (
-            <Stack
-              direction="row"
-              spacing={1}
-              sx={{
-                justifyContent: isSent ? 'flex-end' : 'flex-start',
-                position: 'absolute',
-                top: '50%',
-                p: 1.5,
-              }}
-            >
-              <IconButton
-                variant={isLiked ? 'soft' : 'plain'}
-                color={isLiked ? 'danger' : 'neutral'}
-                size="sm"
-                onClick={() => setIsLiked((prevState) => !prevState)}
-              >
-                {isLiked ? '❤️' : <FavoriteBorderIcon />}
-              </IconButton>
-             
-            </Stack>
-          )}
+          
         </Box>
       )}
     </Box>

@@ -106,7 +106,7 @@ export default function ChatBubble(props) {
           {(isHovered || isLiked || isCelebrated) && (
             <Stack
               direction="row"
-              spacing={0.5}
+              spacing={1}
               sx={{
                 justifyContent: isSent ? 'flex-end' : 'flex-start',
                 position: 'absolute',

@@ -2,43 +2,16 @@ import * as React from "react";
 import {
   CssVarsProvider,
   extendTheme,
-  useColorScheme,
 } from "@mui/joy/styles";
 import GlobalStyles from "@mui/joy/GlobalStyles";
 import CssBaseline from "@mui/joy/CssBaseline";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
-import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
 import Stack from "@mui/joy/Stack";
-import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
-import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import GoogleIcon from "./GoogleIcon";
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-function ColorSchemeToggle(props) {
-  const { onClick, ...other } = props;
-  const { mode, setMode } = useColorScheme();
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => setMounted(true), []);
-
-  return (
-    <IconButton
-      aria-label="toggle light/dark mode"
-      size="sm"
-      variant="outlined"
-      disabled={!mounted}
-      onClick={(event) => {
-        setMode(mode === "light" ? "dark" : "light");
-        if (onClick) onClick(event);
-      }}
-      {...other}
-    >
-      {mode === "light" ? <DarkModeRoundedIcon /> : <LightModeRoundedIcon />}
-    </IconButton>
-  );
-}
 
 const customTheme = extendTheme({ defaultColorScheme: "dark" });
 
@@ -93,7 +66,7 @@ export default function JoySignInSideTemplate() {
             <Box sx={{ gap: 2, display: 'flex', alignItems: 'center' }}>
               <Typography level="title-lg">Sign in</Typography>
             </Box>
-            <ColorSchemeToggle />
+            
           </Box>
           <Box
             component="main"

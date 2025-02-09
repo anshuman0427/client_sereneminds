@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import Avatar from '@mui/joy/Avatar';
 import Box from '@mui/joy/Box';
-import IconButton from '@mui/joy/IconButton';
 import Stack from '@mui/joy/Stack';
 import Sheet from '@mui/joy/Sheet';
 import Typography from '@mui/joy/Typography';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import InsertDriveFileRoundedIcon from '@mui/icons-material/InsertDriveFileRounded';
 
 export default function ChatBubble(props) {
   const { content, variant, timestamp, attachment = undefined, sender } = props;
   const isSent = variant === 'sent';
   const [isHovered, setIsHovered] = useState(false);
-  const [isLiked, setIsLiked] = useState(false);
   // eslint-disable-next-line
   const [isCelebrated, setIsCelebrated] = useState(false);
 
